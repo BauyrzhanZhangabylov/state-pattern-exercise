@@ -3,7 +3,7 @@ package com.example.examplestatemachine;
 public class StateContext {
     private State state;
 
-    private State.Action firstAction;
+    private Action firstAction;
 
     private StateAccept stateAccept;
     private StateReject stateReject;
@@ -16,14 +16,14 @@ public class StateContext {
 
     public void actionA() {
         if (firstAction == null) {
-            firstAction = State.Action.A;
+            firstAction = Action.A;
         }
         state.actionA();
     }
 
     public void actionB() {
         if (firstAction == null) {
-            firstAction = State.Action.B;
+            firstAction = Action.B;
         }
         state.actionB();
     }
@@ -32,7 +32,7 @@ public class StateContext {
         return state.isAccept();
     }
 
-    public State.Action getFirstAction() {
+    public Action getFirstAction() {
         return this.firstAction;
     }
 

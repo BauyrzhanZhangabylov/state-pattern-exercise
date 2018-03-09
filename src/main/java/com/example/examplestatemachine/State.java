@@ -8,27 +8,11 @@ public abstract class State {
         this.sc = sc;
     }
 
-    public void actionA() {
-        if (sc.getFirstAction().equals(Action.A)) {
-            sc.setState(sc.getStateAccept());
-        } else {
-            sc.setState(sc.getStateReject());
-        }
-    }
+    public abstract void actionA();
 
-    public void actionB() {
-        if (sc.getFirstAction().equals(Action.B)) {
-            sc.setState(sc.getStateAccept());
-        } else {
-            sc.setState(sc.getStateReject());
-        }
-    }
+    public abstract void actionB();
 
     public boolean isAccept() {
         return this.accept;
-    }
-
-    enum Action {
-        A, B
     }
 }
